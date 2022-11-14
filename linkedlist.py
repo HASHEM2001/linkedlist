@@ -89,11 +89,12 @@ class LinkedList:
 
 #Method for inserting a new node a t a ny position in a Linked List 
   def insertAtPos(self,pos,data): 
-    new_node=Node(data)
+    new_node=Node()
+    new_node.setData(data)
     if pos == 0:
        self.insertAtBeginning(data)
 
-    elif pos == self.size :
+    elif pos == self.length :
        self.insertAtEnd(data)
     
     else:
@@ -101,10 +102,10 @@ class LinkedList:
       count =1
       while count <pos -1 :
         count+=1
-        current=current.next
-      new_node.next= current.next
-      current.next=new_node
-      self.size+=1
+        current=current.getNext()
+      new_node.setNext(current.getNext())
+      current.setNext(new_node)
+      self.length+=1
   
       
 
@@ -133,8 +134,8 @@ l.insertAtBeginning(6)
 l.insertAtBeginning(7)
 l.insertAtBeginning(8)
 l.insertAtEnd(15)
-# l.insertAtPos(3,9)
-print(l.length)
+l.insertAtPos(3,9)
+# print(l.length)
 l.printList()
 # Please don't forget to take a screen shot for output.
 
