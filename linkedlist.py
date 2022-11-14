@@ -7,9 +7,6 @@
 
 #Node of a Singly Linked List 
 
-from hashlib import new
-from itertools import count
-from select import select
 
 
 class Node: 
@@ -135,7 +132,7 @@ l.insertAtBeginning(7)
 l.insertAtBeginning(8)
 l.insertAtEnd(15)
 l.insertAtPos(3,9)
-# print(l.length)
+print(l.length)
 l.printList()
 # Please don't forget to take a screen shot for output.
 
